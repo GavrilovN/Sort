@@ -5,22 +5,31 @@
 #include <fstream>
 using namespace std;
 
-SCENARIO("zzz", "[zzz]")
+SCENARIO("32mb", "[32mb]")
 {
-  sort_it("in.txt", "out.txt", 120);
-	string *a = new string[21], *b = new string[21];
-	bool x = false;
-	ifstream f1("out.txt"), f2("test.txt");
-	for (int i = 0; i < 21; ++i)
-	{
-		getline(f1, a[i]);
-		getline(f2, b[i]);
-	}
-	size_t x_ = 0;
-	for (int i = 0; i < 21; ++i)
-	{
-		if (a[i] == b[i]) ++x_;
-	}
-	if (x_ == 21) x = true;
-  REQUIRE(x);
-} 
+	std::chrono::time_point<std::chrono::system_clock> start, end;
+	start = std::chrono::system_clock::now();
+	sort_it("32mb", "out_32", 17);
+	end = std::chrono::system_clock::now();
+	cout <<"32MB- " <<(end - start).count() <<" nanoseconds"<< endl;
+  REQUIRE(1);
+}
+SCENARIO("15mb", "[15mb]")
+{
+	std::chrono::time_point<std::chrono::system_clock> start, end;
+	start = std::chrono::system_clock::now();
+	sort_it("15mb", "out_15", 4);
+	end = std::chrono::system_clock::now();
+	cout <<"15MB- " <<(end - start).count() <<" nanoseconds"<< endl;
+  REQUIRE(1);
+}
+
+SCENARIO("8mb", "[8mb]")
+{
+	std::chrono::time_point<std::chrono::system_clock> start, end;
+	start = std::chrono::system_clock::now();
+	sort_it("8mb", "out_8", 1);
+	end = std::chrono::system_clock::now();
+	cout <<"8MB- " <<(end - start).count() <<" nanoseconds"<< endl;
+  REQUIRE(1);
+}
