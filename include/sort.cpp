@@ -17,7 +17,7 @@ struct s_i
 	}
 };
 
-void sort(const string input_name, const string output_name, const unsigned long int mem_size)
+void sort_it(const string input_name, const string output_name, const unsigned long int mem_size)
 {
 	ifstream fin(input_name);
 	if (!fin.is_open()) throw("file_not_open");
