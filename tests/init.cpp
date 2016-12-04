@@ -7,7 +7,7 @@ using namespace std;
 
 SCENARIO("zzz", "[zzz]")
 {
-  sort("in.txt", "out.txt", 120);
+  sort_it("in.txt", "out.txt", 120);
 	string *a = new string[21], *b = new string[21];
 	bool x = false;
 	ifstream f1("out.txt"), f2("test.txt");
