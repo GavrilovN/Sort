@@ -17,7 +17,7 @@ struct s_i
 	}
 };
 
-void sort_by_TAHK(const string input_name, const string output_name, const unsigned long int mem_size)
+void sort(const string input_name, const string output_name, const unsigned long int mem_size)
 {
 	ifstream fin(input_name);
 	if (!fin.is_open()) throw("file_not_open");
@@ -57,7 +57,7 @@ void sort_by_TAHK(const string input_name, const string output_name, const unsig
 		if (si.s != "")
 		{
 			fout << si.s;
-			/*if (!pq.empty())*/ fout << endl;
+			fout << endl;
 		}
 		if (!(*si.f).eof())
 		{
@@ -75,13 +75,3 @@ void sort_by_TAHK(const string input_name, const string output_name, const unsig
 	}
 	fout.close();
 }
-
-/*void main(){
-string s_in, s_out;
-unsigned long int memory_size;
-cout << "input_name: "; cin >> s_in;
-cout << "output_name: "; cin >> s_out;
-cout << "free memory(bytes): "; cin >> memory_size;
-sort_by_TAHK(s_in, s_out, memory_size);
-system("pause");
-}*/
