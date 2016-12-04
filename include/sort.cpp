@@ -58,7 +58,7 @@ bool operator < (const s_i& s_i1, const s_i& s_i2)
 	return (s_i1.s > s_i2.s);
 }
 
-void sort_by_TAHK(const string input_name, const string output_name, const short mem_size)
+void sort_it(const string input_name, const string output_name, const short mem_size)
 {
 	ifstream fin(input_name, ios::binary);
 	if (!fin.is_open()) throw("file_not_open");
