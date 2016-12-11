@@ -19,12 +19,12 @@ struct stroka
 	}
 };
 
-bool operator < (const stroka& s1, const stroka& s2)
+bool operator < (const stroka & s1, const stroka& s2)
 {
 	return (s1.name < s2.name);
 }
 
-bool operator >(const stroka& s1, const stroka& s2)
+bool operator >(const stroka & s1, const stroka& s2)
 {
 	return (s1.name > s2.name);
 }
